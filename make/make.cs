@@ -81,6 +81,7 @@ public class Make
                 {
                         testfile();
                 }
+		Console.WriteLine($"{args}");
         }
 
         public static void testfile()
@@ -94,6 +95,7 @@ public class Make
                 return_file_data += print_init("out");
 		return_file_data = return_file_data.Replace("{\n\t};", "();").Replace("\"", "\\\"").Replace("$34$", "\"");
 		File.WriteAllText(save_file_path, return_file_data); 
+		Console.WriteLine("恢复测试文件成功");
         }
 
 	public static void makefile()
@@ -158,6 +160,7 @@ public class Make
 				break;
 		}
                 return return_file_data;
+		Console.WriteLine("嵌入文件成功");
 	}
 
 	public static string print_file(string file)

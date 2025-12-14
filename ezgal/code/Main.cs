@@ -26,6 +26,15 @@ public partial class Main : Node2D
         GetTree().ChangeSceneToFile("res://scene/game.tscn");
     }
 
+    // 读取字典
+    void _on_dictionary_pressed()
+    {
+        /*
+        Global.intptr = 0;
+        GetTree().ChangeSceneToFile("res://scene/game.tscn");
+        */
+    }
+
     void _on_exit_pressed()
     {
         GetTree().Quit();
