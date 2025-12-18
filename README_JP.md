@@ -34,7 +34,13 @@
 ソースコードを直接プロジェクトにクローンし、**ezgal**フォルダをgodotにインポートして開発を続けることができます：
 
 ```bash
-git clone https://github.com/godothub/ezgal
+git clone https://atomgit.com/godothub/ezgal
+cd ezgal/ezgal
+```
+or
+
+```bash
+git clone https://gitee.com/godothub/ezgal.git
 cd ezgal/ezgal
 ```
 
