@@ -89,15 +89,15 @@ public partial class Game : Control
 
 		// 类型判断与处理
 		switch (data.type) {
-			case "背景" or "Background":
+			case FlowData.background:
 				// 设置背景图片
 				_background(background, data.text);
 				Global.intptr++;
 				run();
 				break;
-			case "对话框":
+			case FlowData.dialogue:
 				// 对话框更新状态
-				Global.typeptr = "对话框";
+				Global.typeptr = data.type;
 				if (is_first)
 				{
 					font._hide();
@@ -114,9 +114,9 @@ public partial class Game : Control
 				}
 				Global.intptr++;
 				break;
-			case "全屏":
+			case FlowData.fullscreen:
 				// 全屏更新状态
-				Global.typeptr = "全屏";
+				Global.typeptr = data.type;
 				if (is_first)
 				{
 					font._show();
@@ -133,12 +133,12 @@ public partial class Game : Control
 				}
 				Global.intptr++;
 				break;
-			case "选项":
+			case FlowData.options:
 				font._hide();
 				bottom._hide();
 				options.set_options(data.option);
 				break;
-			case "选择":
+			case FlowData.option:
 				Global.intptr++;
 				break;
 			default:
@@ -173,7 +173,7 @@ public partial class Game : Control
 		else
 		{
 			string data_type = null;
-			List<string> type_list = new List<string> { "全屏", "对话框" };
+			List<string> type_list = new List<string> { FlowData.fullscreen, FlowData.dialogue };
 			for (int i = 0; i < new_datas.Count; i++)
 			{
 				if (type_list.Contains(new_datas[i].type))
@@ -195,7 +195,7 @@ public partial class Game : Control
 				}
 			}
 		}
-		if (type == "选择")
+		if (type == FlowData.option)
 		{
 			run();
 		}
@@ -227,7 +227,7 @@ public partial class Game : Control
 			}
 			else
 			{
-				GD.PrintErr($"未找到图片: {imagePath}");
+				GD.PrintErr($"not found image: {imagePath}");
 			}
 			node.Position = anima.position;
 			node.Scale = new Vector2(anima.scale, anima.scale);

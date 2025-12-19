@@ -45,6 +45,7 @@ scroll_active = false
 
 [node name="dictionary" parent="." instance=ExtResource("4_gssey")]
 visible = false
+layout_mode = 0
 
 [connection signal="gui_input" from="dialog" to="." method="_on_dialog_gui_input"]
 [connection signal="gui_input" from="text" to="." method="_on_text_gui_input"]

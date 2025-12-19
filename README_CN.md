@@ -23,7 +23,7 @@
 | 开发模式     | 支持2种开发模式: [深度嵌入](#深度嵌入)便于打包为一个文件, 并开发更多功能, [低代码开发](#低代码开发)也可以通过接口直接将编译文件作为开发程序进行编写 | cryingn |
 | ezgal解释器 | 将剧本文件解释为json格式并逐段读取                                                                | cryingn |
 | 剧本语法     | 为便于剧本写作与演出分离, ezgal支持的语法高度划分了台词与剧本演出                                               | cryingn |
-| 剧本语言     | 中文(短期将支持中/英语法，未来计划支持自定义脚本语言)                                                       | cryingn |
+| 剧本语言     | 中/英/日三语（支持在`./make/FlowData.cs`定制语言）                                               | cryingn |
 | wiki语言   | 中/英/日三语                                                                            | cryingn |
 
 ## 使用
@@ -37,7 +37,7 @@
 你可以直接将源码克隆到你的项目中, 并将**ezgal**文件夹导入到godot中接着开发:
 
 ```bash
-git clone https://atomgit.com/godothub/ezgal
+git clone https://atomgit.com/godothub/ezgal.git
 cd ezgal/ezgal
 ```
 
@@ -51,13 +51,13 @@ cd ezgal/ezgal
 在编写完成后想要打包为一个程序可以直接通过**make**文件夹打包进`./ezgal/code/FlowData.cs`文件夹进行编译, 打包方式如下：
 
 ```bash
-dotnet run --project make
+dotnet run --project make build zh
 ```
 
 godot编译的程序可以不依赖文件夹运行, 如果需要恢复到文件的编辑状态, 可以使用以下指令进行恢复:
 
 ```bash
-dotnet run --project make test
+dotnet run --project make edit zh
 ```
 
 ### 低代码开发
@@ -76,4 +76,4 @@ dotnet run --project make test
 * 感谢[100font](https://www.100font.com/)提供字体资源.
 * godot-ezgal、ezgal项目最初由VYCMa开源中国社区监督.
 * ezgal项目当前由[Godot Hub社区](https://godothub.cn/)维护.
-* 致谢参与贡献的所有个人
+* 致谢参与贡献与设计的所有个人

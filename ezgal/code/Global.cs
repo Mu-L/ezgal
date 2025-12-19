@@ -124,7 +124,7 @@ public partial class Global : Node
 			while ((line = reader.ReadLine()) != null)
 			{
 				line = line.Trim();
-				if  (flow_line.type != "选项")
+				if  (flow_line.type != FlowData.option)
 				{
 					flow_line = new Flow{};
 				}
@@ -142,7 +142,7 @@ public partial class Global : Node
 						line += reader.ReadLine();
 					}
 
-					if (flow_line.type == "选项")
+					if (flow_line.type == FlowData.option)
 					{
 						set_option.Add(line);
 					}
@@ -160,12 +160,12 @@ public partial class Global : Node
 						}
 					}
 				}
-				else if (flow_line.type == "选项") 
+				else if (flow_line.type == FlowData.option) 
 				{
 					set_option.Add(line);
 				}
 
-				if (flow_line.type != "选项") 
+				if (flow_line.type != FlowData.option) 
 				{
 					// 处理对话部分
 					if (line.Contains(":"))
@@ -203,7 +203,7 @@ public partial class Global : Node
 					case "bg":
 						new_datas.Add(
 							new Flow{
-								type = "背景",
+								type = FlowData.background,
 								text = sets[1],
 							}
 						);
@@ -227,10 +227,6 @@ public partial class Global : Node
 				}
 			}
 		}
-		else
-		{
-			GD.Print("Error: Invalid format in line.");
-		}
 		return flow_line;
 	}
 
@@ -250,7 +246,7 @@ public partial class Global : Node
 				{
 					// 背景设置
 					case "bg":
-						option_flow_line.type = "背景";
+						option_flow_line.type = FlowData.background;
 						option_flow_line.text = sets[1];
 						break;
 					// 特效设置
@@ -267,9 +263,9 @@ public partial class Global : Node
 						break;
 				}
 			}
-			if (option_flow_line.type != "背景")
+			if (option_flow_line.type != FlowData.background)
 			{
-				option_flow_line.type = "选择";
+				option_flow_line.type = FlowData.option;
 			}
 		}
 		return option_flow_line;
@@ -280,7 +276,7 @@ public partial class Global : Node
 		bool flag = false;
 		if (line == null)
 		{
-			if (flow_line.type == "选项")
+			if (flow_line.type == FlowData.option)
 			{
 				flow_line.option = set_option;
 				new_datas.Add(flow_line);
@@ -301,7 +297,7 @@ public partial class Global : Node
 			// 处理中括号部分
 			if (line.StartsWith("["))
 			{
-				if (flow_line.type == "选项")
+				if (flow_line.type == FlowData.option)
 				{
 					flow_line.option = set_option;
 					new_datas.Add(flow_line);
@@ -309,7 +305,7 @@ public partial class Global : Node
 				}
 				match = Regex.Match(line,  @"\[([^\]]*)\]");
 				flow_line.type = match.Groups[1].Value;
-				if (flow_line.type == "选项")
+				if (flow_line.type == FlowData.option)
 				{
 					set_option = new List<string>();
 				}
@@ -385,6 +381,4 @@ public partial class Global : Node
 			}
 		}
 	}
-
-
 }
