@@ -7,7 +7,7 @@ public partial class MainControl : CanvasLayer
 	[Export]
 	private Button _gameStartNode;
 	[Export]
-	private Button _dictionaryNode;
+	private Button _technicalNode;
 	[Export]
 	private Button _exitNode;
 	[Export(PropertyHint.FilePath)]
@@ -22,7 +22,7 @@ public partial class MainControl : CanvasLayer
 	public override void _Ready()
 	{
 		_gameStartNode.Pressed += OnGameStartPressed;
-		_dictionaryNode.Pressed += OnDictionaryPressed;
+		_technicalNode.Pressed += OnTechnicalPressed;
 		_exitNode.Pressed += OnExitPressed;
 	}
 
@@ -62,7 +62,7 @@ public partial class MainControl : CanvasLayer
 	}
 
 	// 读取字典
-	void OnDictionaryPressed()
+	void OnTechnicalPressed()
 	{
 		/*
 		Global.intptr = 0;

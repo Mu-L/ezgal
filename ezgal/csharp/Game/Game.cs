@@ -210,17 +210,17 @@ public partial class Game : Control
 		Sprite2D node;
 		if (_dicNode.TryGetValue("Node1Key", out node))
 		{
-			node.Texture = (Texture2D)ResourceLoader.Load($"res://image/{anima.type}/{anima.name}");
+			node.Texture = (Texture2D)ResourceLoader.Load($"./image/{anima.type}/{anima.name}");
 			node.Position = anima.position;
 			node.Scale = new Vector2(anima.scale, anima.scale);
 		}
 		else
 		{
-			PackedScene scene = (PackedScene)ResourceLoader.Load("res://scene/anima.tscn");
+			PackedScene scene = (PackedScene)ResourceLoader.Load("./scene/Game/anima.tscn");
 			node = (Sprite2D)scene.Instantiate();
 			AddChild(node);
 			//node.Texture = (Texture2D)ResourceLoader.Load($"./image/{anima.type}/{anima.name}");
-			string imagePath = $"res://image/{anima.type}/{anima.name}";
+			string imagePath = $"./image/{anima.type}/{anima.name}";
 			Texture2D texture = (Texture2D)ResourceLoader.Load(imagePath);
 
 			if (texture != null)

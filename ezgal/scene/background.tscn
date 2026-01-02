@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://caj88lmkatmto"]
-
-[node name="background" type="Sprite2D"]
-z_index = -1
-scale = Vector2(1.5, 1.5)

@@ -22,8 +22,8 @@ public partial class Global : Node
 	public static List<Flow> datas;
 	// 当前文本名称
 	public static string read_file_name;
-	// 专业词汇查询
-	public static bool is_query = false;
+	// 是否进入keys.tscn
+	public static string KeysState = null;
 
 	// 读取文件的处理工具.
 	static string line;
@@ -75,10 +75,9 @@ public partial class Global : Node
 	}
 
 	/*
-	 * 这是检查代码用的，别改了，敲你喵！
 	 * This is for code inspection. Don't modify it, damn it!
+	 * 这是检查代码用的，别改了，敲你喵！
 	 * これはコードチェック用なんだから、変更しないでくれよ、クソが！
-	 *
 	 public static void print(Flow new_data)
 	 {
 	 GD.Print($"Round ptr:{intptr}");
@@ -120,23 +119,24 @@ public partial class Global : Node
 		return FlowData.flowdata.FirstOrDefault(x => x.file == path).data;
 	}
 
-	public static void LoadDictionary(Dictionary dictionaryScene, Variant fileName)
+	public static void LoadTechnical(Keys keysScene, Variant fileName)
 	{
-		dictionaryScene.Show();
-		dictionaryScene.SetSelf(dictionaryScene);
+		keysScene.BackgroundPressed("Technical");
+		Technical technicalScene = keysScene.TechnicalScene as Technical;
+		technicalScene.SetSelf(keysScene);
 		if (FlowData.dicdata.Count == 0)
 		{
 			try
 			{
-				using (StreamReader reader = new StreamReader($"./dictionary/{fileName}.txt"))
+				using (StreamReader reader = new StreamReader($"./technical/{fileName}.txt"))
 				{
 					string textdata = reader.ReadToEnd();
-					dictionaryScene.TextNode.Text = textdata;
+					technicalScene.TextNode.Text = textdata;
 				}
 			}
 			catch
 			{
-				dictionaryScene.TextNode.Text = "无法加载字典内容";
+				technicalScene.TextNode.Text = "无法加载字典内容";
 			}
 		}
 		else
@@ -144,11 +144,11 @@ public partial class Global : Node
 			try
 			{
 				string textdata = FlowData.dicdata.FirstOrDefault(x => x.file == $"{fileName}.txt").data;
-				dictionaryScene.TextNode.Text = textdata;
+				technicalScene.TextNode.Text = textdata;
 			}
 			catch
 			{
-				dictionaryScene.TextNode.Text = "无法加载字典内容";
+				technicalScene.TextNode.Text = "无法加载字典内容";
 			}
 		}
 	}

@@ -6,8 +6,6 @@ public partial class Options : Control
 {
 	[Export]
 	private PackedScene _optionScene;
-	//PackedScene option_tscn = GD.Load<PackedScene>("res://scene/option.tscn");
-	//static string[] init_options;
 
 	public override void _Ready()
 	{

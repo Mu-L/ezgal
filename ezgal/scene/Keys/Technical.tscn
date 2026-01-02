@@ -1,24 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6f15wney1tmd"]
+[gd_scene load_steps=2 format=3 uid="uid://c6f15wney1tmd"]
 
-[ext_resource type="Theme" uid="uid://dps3t0y1voqpb" path="res://theme/game.tres" id="1_b5uk8"]
-[ext_resource type="Script" uid="uid://bx6sunkarf4il" path="res://csharp/Dictionary.cs" id="2_rb4mc"]
+[ext_resource type="Script" uid="uid://x14xkrcc3ylw" path="res://csharp/Keys/Technical.cs" id="1_ik6g3"]
 
-[node name="Dictionary" type="Control" node_paths=PackedStringArray("TextNode")]
+[node name="Technical" type="Control" node_paths=PackedStringArray("TextNode")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1536.0
 offset_bottom = 864.0
-theme = ExtResource("1_b5uk8")
-script = ExtResource("2_rb4mc")
+script = ExtResource("1_ik6g3")
 TextNode = NodePath("Text")
 metadata/_edit_horizontal_guides_ = [750.0]
 metadata/_edit_vertical_guides_ = [1486.0, 349.0]
-
-[node name="Dialog" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1536.0
-offset_bottom = 864.0
-color = Color(0, 0, 0, 0.784314)
 
 [node name="Text" type="RichTextLabel" parent="."]
 layout_mode = 0

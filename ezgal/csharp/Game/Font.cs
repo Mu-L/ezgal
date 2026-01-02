@@ -7,7 +7,7 @@ public partial class Font : Control
 	[Export]
 	RichTextLabel TextNode { get; set; }
 	[Export]
-	Dictionary DictionaryScene { get; set; }
+	private Control _keysScene { get; set; }
 
 	[Signal]
 	public delegate void StartGameEventHandler();
@@ -65,30 +65,28 @@ public partial class Font : Control
 	// 鼠标点击事件
 	public void _on_text_gui_input(InputEvent @event)
 	{
-		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed && mouseEvent.ButtonIndex == MouseButton.Left)
+		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed && mouseEvent.ButtonIndex == MouseButton.Left && Global.KeysState == null)
 		{
-			if (!Global.is_query)
-			{
-				EmitSignal(nameof(StartGame));
-			}
+			EmitSignal(nameof(StartGame));
 		}
 	}
 
 	// 专业词汇文本事件
 	public void _on_text_meta_hover_ended(Variant meta)
 	{
-		Global.is_query = false;
+		Global.KeysState = null;
 	}
 
 	public void _on_text_meta_hover_started(Variant meta)
 	{
-		Global.is_query = true;
+		Global.KeysState = "Touch";
 	}
 
 	// 跳转到专业词汇文本事件
 	public void _on_text_meta_clicked(Variant meta)
 	{
-		Global.LoadDictionary(DictionaryScene, meta);
+		Keys keysScene = _keysScene as Keys;
+		Global.LoadTechnical(keysScene, meta);
 	}
 
 }

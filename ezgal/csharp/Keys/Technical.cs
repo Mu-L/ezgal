@@ -1,11 +1,14 @@
 using Godot;
 using System;
 
-public partial class Dictionary : Control
+public partial class Technical : Control
 {
 	[Export]
+	private Keys _keysScene;
+	[Export]
 	public RichTextLabel TextNode { get; set; }
-	private Dictionary _self;
+	
+	private Keys _self;
 
 	public override void _Ready()
 	{
@@ -26,18 +29,18 @@ public partial class Dictionary : Control
 	}
 	*/
 
-	public void SetSelf(Dictionary dictionaryScene)
+	public void SetSelf(Keys keysScene)
 	{
-		this._self = dictionaryScene;
+		this._self = keysScene;
 	}
 
 	public void _on_text_meta_clicked(Variant meta)
 	{
-		Global.LoadDictionary(_self, meta);
+		Global.LoadTechnical(_self, meta);
 	}
 
 	public void _on_button_pressed()
 	{
-		Hide();
+		_keysScene.BackgroundPressed("Technical");
 	}
 }

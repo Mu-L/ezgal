@@ -1,8 +1,12 @@
 using Godot;
 using System;
 
-public partial class History : Button
+public partial class HistoryText : Button
 {
+	/*
+	[Export]
+	private ColorRect Background;
+
 	[Export]
 	public Game Game { get; set; }
 
@@ -15,21 +19,21 @@ public partial class History : Button
 	[Export]
 	public Label NameLabel { get; set; }
 
-	public override void _Toggled(bool toggledOn)
+	public override void _Ready()
 	{
-		if (toggledOn)
+		ButtonNode.Pressed += OnButtonPressed;
+	}
+
+	public void OnButtonPressed()
+	{
+		if ( Background.IsVisibleInTree() )
 		{
-			TextLabel.Hide();
-			HistoryTextLabel.Show();
-			NameLabel.Hide();
-			ClearHistory();
-			LoadHistory();
+			Background.Hide();
+
 		}
 		else
 		{
-			HistoryTextLabel.Hide();
-			TextLabel.Show();
-			NameLabel.Show();
+			Background.Show();
 		}
 	}
 	
@@ -61,4 +65,5 @@ public partial class History : Button
 	{
 		HistoryTextLabel.Text = "";
 	}
+	*/
 }

@@ -19,7 +19,8 @@ public partial class Option : Button
 
 	private void OnOptionPressed()
 	{
-		_gameScene.Datas[Global.intptr + 1] = Global.SetBracesFunc2(set_option);
+		Global.Flow new_flow = Global.SetBracesFunc2(set_option);
+		_gameScene.Datas[Global.intptr + 1] = new_flow;
 		Global.intptr++;
 		_optionsScene.Hide();
 		_gameScene.Run();

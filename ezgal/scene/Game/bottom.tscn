@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ralyvqrt8kex"]
+[gd_scene load_steps=5 format=3 uid="uid://ralyvqrt8kex"]
 
 [ext_resource type="Theme" uid="uid://dps3t0y1voqpb" path="res://theme/game.tres" id="1_jym3g"]
 [ext_resource type="Shader" uid="uid://cexnww82tk1rr" path="res://shader/底栏.gdshader" id="1_pnh6y"]
 [ext_resource type="Script" uid="uid://bsgd1hoi4o51c" path="res://csharp/Game/Bottom.cs" id="2_vj1xx"]
-[ext_resource type="PackedScene" uid="uid://c6f15wney1tmd" path="res://scene/dictionary.tscn" id="4_gssey"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bvesk"]
 shader = ExtResource("1_pnh6y")
@@ -18,7 +17,7 @@ script = ExtResource("2_vj1xx")
 dialog = NodePath("Dialog")
 text = NodePath("Text")
 name = NodePath("Name")
-DictionaryScene = NodePath("Dictionary")
+DictionaryScene = NodePath("")
 metadata/_edit_vertical_guides_ = [1536.0, 51.0, 1476.0]
 metadata/_edit_horizontal_guides_ = [636.0, 826.0]
 
@@ -46,10 +45,6 @@ offset_right = 1476.0
 offset_bottom = 826.0
 bbcode_enabled = true
 scroll_active = false
-
-[node name="Dictionary" parent="." instance=ExtResource("4_gssey")]
-visible = false
-layout_mode = 0
 
 [connection signal="gui_input" from="Dialog" to="." method="_on_dialog_gui_input"]
 [connection signal="gui_input" from="Text" to="." method="_on_text_gui_input"]

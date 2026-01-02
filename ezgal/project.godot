@@ -12,7 +12,7 @@ config_version=5
 
 config/name="ezgal"
 config/description="This is a framework based on godot.mono designed to facilitate galgame development."
-run/main_scene="uid://baf8vr7xo62q3"
+run/main_scene="uid://cp6isjvvcti2v"
 config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/fullsize=false
@@ -24,6 +24,7 @@ config/icon="res://image/icon.png"
 FlowData="*res://csharp/Global/FlowData.cs"
 Global="*res://csharp/Global/Global.cs"
 Tools="*res://csharp/Global/Tools.cs"
+ezapi="*res://gdscript/Global/ezapi.gd"
 
 [display]
 

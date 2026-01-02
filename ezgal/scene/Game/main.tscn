@@ -54,12 +54,12 @@ max_polyphony = 2
 stream = ExtResource("10_p7wv6")
 max_polyphony = 2
 
-[node name="MainControl" type="CanvasLayer" parent="." node_paths=PackedStringArray("_gameStartNode", "_dictionaryNode", "_exitNode", "Menu", "_start")]
+[node name="MainControl" type="CanvasLayer" parent="." node_paths=PackedStringArray("_gameStartNode", "_technicalNode", "_exitNode", "Menu", "_start")]
 script = ExtResource("5_b5f6u")
 _gameStartNode = NodePath("../Menu/BoxContainer/GameStart")
-_dictionaryNode = NodePath("../Menu/BoxContainer/Dictionary")
+_technicalNode = NodePath("../Menu/BoxContainer/Technical")
 _exitNode = NodePath("../Menu/BoxContainer/Exit")
-GameScenePath = "res://scene/game.tscn"
+GameScenePath = "res://scene/Game/game.tscn"
 Menu = NodePath("../Menu")
 _start = NodePath("Start")
 
@@ -132,7 +132,7 @@ text = "开始游戏"
 layout_mode = 2
 text = "读取存档"
 
-[node name="Dictionary" type="Button" parent="Menu/BoxContainer"]
+[node name="Technical" type="Button" parent="Menu/BoxContainer"]
 layout_mode = 2
 text = "字	         典"
 
