@@ -8,6 +8,8 @@ public partial class Main : Node2D
 	[Export]
 	private AudioStreamPlayer _sounds;
 	[Export]
+	private AudioStreamPlayer _musicNode;
+	[Export]
 	private BoxContainer _boxContainer;
 
 	public override void _Ready()
