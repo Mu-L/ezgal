@@ -4,18 +4,18 @@ using System.Collections.Generic;
 
 public partial class Game : Control
 {
-	// 背景图片
 	[Export]
 	private Sprite2D _backgroundNode;
-	// 对话框文本
 	[Export]
 	private Bottom BottomScene;
-	// 全屏对话文本
 	[Export]
 	private Font FontScene;
-	// 设置选项节点
 	[Export]
 	private Options OptionsScene;
+	[Export]
+	private AudioStreamPlayer _musicNode;
+	[Export]
+	private AudioStreamPlayer _dubbingNode;
 	[Export(PropertyHint.FilePath)]
 	public string EndScenePath { get; set; }
 	// 剧情数据
@@ -34,7 +34,7 @@ public partial class Game : Control
 	// 设置背景图片
 	private void SetBackground(string path)
 	{
-		var texture = Tools.Load($"./image/background/{path}") as Texture2D;
+		var texture = Tools.LoadImage($"./image/background/{path}") as Texture2D;
 		if (texture == null)
 		{
 			GD.PrintErr($"`./image/background/` Failed to load `{path}`.");
@@ -210,7 +210,7 @@ public partial class Game : Control
 		Sprite2D node;
 		if (_dicNode.TryGetValue("Node1Key", out node))
 		{
-			node.Texture = (Texture2D)Tools.Load($"./image/{anima.type}/{anima.name}");
+			node.Texture = (Texture2D)Tools.LoadImage($"./image/{anima.type}/{anima.name}");
 			node.Position = anima.position;
 			node.Scale = new Vector2(anima.scale, anima.scale);
 		}
@@ -219,9 +219,9 @@ public partial class Game : Control
 			PackedScene scene = (PackedScene)ResourceLoader.Load("./scene/Game/anima.tscn");
 			node = (Sprite2D)scene.Instantiate();
 			AddChild(node);
-			//node.Texture = (Texture2D)Tools.Load($"./image/{anima.type}/{anima.name}");
+			//node.Texture = (Texture2D)Tools.LoadImage($"./image/{anima.type}/{anima.name}");
 			string imagePath = $"./image/{anima.type}/{anima.name}";
-			Texture2D texture = (Texture2D)Tools.Load(imagePath);
+			Texture2D texture = (Texture2D)Tools.LoadImage(imagePath);
 
 			if (texture != null)
 			{

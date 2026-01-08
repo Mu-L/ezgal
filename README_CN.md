@@ -1,9 +1,12 @@
 <div align="center" style="display:grid;place-items:center;">
         <p>
             <a href="https://gitee.com/cryingn/ezgal" target="_blank"><img width="180" src="./ezgal/image/icon.png" alt="ezgal logo"></a>
-        <h1>ezgal</h1>
+	        <h1>ezgal</h1>
         </p>
-        <img src="https://gitcode.com/godothub/ezgal/star/badge.svg?style=flat-square">
+    <div style="display: flex; gap: 10px;">
+		<img src="https://gitcode.com/godothub/ezgal/star/badge.svg?style=flat-square">
+		<img src="https://img.shields.io/github/stars/Godothub/ezgal.svg">
+	</div>
 </div>
 
 [English](./README.md)|中文|[日本語](./README_JP.md)

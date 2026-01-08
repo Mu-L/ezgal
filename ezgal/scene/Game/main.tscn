@@ -21,11 +21,12 @@ shader_parameter/max_alpha = 1.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8wlu8"]
 shader = ExtResource("5_vil18")
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("_startTextureNode", "_sounds", "_musicNode", "_boxContainer")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("_startTextureNode", "_cpuParticles2DNode", "_musicNode", "_soundsNode", "_boxContainer")]
 script = ExtResource("1_pum5v")
 _startTextureNode = NodePath("StartTexture")
-_sounds = NodePath("Sounds")
+_cpuParticles2DNode = NodePath("CPUParticles2D")
 _musicNode = NodePath("Music")
+_soundsNode = NodePath("Sounds")
 _boxContainer = NodePath("Menu/BoxContainer")
 metadata/_edit_vertical_guides_ = [768.0]
 
@@ -44,7 +45,6 @@ scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_tgr4c")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-autoplay = true
 max_polyphony = 2
 
 [node name="Sounds" type="AudioStreamPlayer" parent="."]

@@ -11,7 +11,9 @@ public partial class Bottom : Control
 	[Export]
 	Label name { get; set; }
 	[Export]
-	private Control _keysScene { get; set; }
+	private AudioStreamPlayer _soundsNode;
+	[Export]
+	private Control _keysScene;
 
 	[Signal]
 	public delegate void StartGameEventHandler();
@@ -34,6 +36,8 @@ public partial class Bottom : Control
 		if (dialog.Size == new Vector2(Global.window_width, 0))
 		{
 			tween = GetTree().CreateTween();
+			_soundsNode.Play();
+			tween.Finished += OnTweenFinished;
 			tween.TweenProperty(dialog, "size", new Vector2(Global.window_width, 292), 0.3f);
 		}
 		base.Show();
@@ -88,5 +92,10 @@ public partial class Bottom : Control
 	{
 		Keys keysScene = _keysScene as Keys;
 		Global.LoadTechnical(keysScene, meta);
+	}
+
+	public void OnTweenFinished()
+	{
+		_soundsNode.Stop();
 	}
 }
