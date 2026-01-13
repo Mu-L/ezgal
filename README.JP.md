@@ -11,11 +11,11 @@
 
 
 
-[English](./README.md)|[中文](./README_CN.md)|日本語
+[English](./README.md)|[中文](./README.ZH.md)|日本語
 
 これはgodot.monoに基づいてgalgameの開発を容易にするための一連のフレームワークです。
 
-<img src="./image/image.png" />
+<img src="./docs/public/example.png" />
 
 ## 説明
 

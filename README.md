@@ -9,11 +9,11 @@
 	</div>
 </div>
 
-English|[中文](./README_CN.md)|[日本語](./README_JP.md)
+English|[中文](./README.ZH.md)|[日本語](./README.JP.md)
 
 A Rapid Development Framework for Text Adventure Games Based on Godot.Mono
 
-![](./image/image.png)
+![](./docs/public/example.png)
 
 ## Description
 

@@ -1,4 +1,4 @@
-[Return to Contents](./Contents.md)
+# Syntax Design
 
 To facilitate scriptwriting and performance design, the grammar design has separated the script and performance to a certain extent. The following provides explanations for the script and performance respectively:
 

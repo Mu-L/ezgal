@@ -9,11 +9,11 @@
 	</div>
 </div>
 
-[English](./README.md)|中文|[日本語](./README_JP.md)
+[English](./README.md)|中文|[日本語](./README.JP.md)
 
 这是基于godot.mono用于文字冒险类游戏的快速开发框架.
 
-![](./image/image.png)
+![](./docs/public/example.png)
 
 ## 描述
 
