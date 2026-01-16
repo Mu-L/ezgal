@@ -210,9 +210,8 @@ public partial class Game : Control
 	// 创建立绘节点
 	public void create_anima(Global.Anima anima)
 	{
-		//DicNode.Add("Node1Key", node1);
 		Sprite2D node;
-		if (_dicNode.TryGetValue("Node1Key", out node))
+		if (_dicNode.TryGetValue(anima.type, out node))
 		{
 			node.Texture = (Texture2D)Tools.LoadImage($"./image/{anima.type}/{anima.name}");
 			node.Position = anima.position;
