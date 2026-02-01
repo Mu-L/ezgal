@@ -16,8 +16,8 @@ public partial class End : Control
 
 	private void SetJson()
 	{
-		string musicPath = ToolsInit.FindInitString("end", "music", "stream");
-		float musicVolumeDb = ToolsInit.FindInitFloat("end", "music", "volume_db");
+		string musicPath = ToolsInit.FindInitValue<string>("end", "music", "stream", "思念,交织于世界彼端.mp3");
+		float musicVolumeDb = ToolsInit.FindInitValue<float>("end", "music", "volume_db", _musicNode.VolumeDb);
 		_musicNode.Stream = Tools.LoadAudio($"./sounds/{musicPath}");
 		_musicNode.VolumeDb = musicVolumeDb;
 		_musicNode.Play();
