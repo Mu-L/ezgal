@@ -6,8 +6,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bvesk"]
 shader = ExtResource("1_pnh6y")
+shader_parameter/roughness = 0.08
+shader_parameter/grain_density = 10.0
 
-[node name="Bottom" type="Control" node_paths=PackedStringArray("dialog", "text", "name", "DictionaryScene")]
+[node name="Bottom" type="Control" node_paths=PackedStringArray("dialog", "text", "name")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1536.0
@@ -17,7 +19,6 @@ script = ExtResource("2_vj1xx")
 dialog = NodePath("Dialog")
 text = NodePath("Text")
 name = NodePath("Name")
-DictionaryScene = NodePath("")
 metadata/_edit_vertical_guides_ = [1536.0, 51.0, 1476.0]
 metadata/_edit_horizontal_guides_ = [636.0, 826.0]
 

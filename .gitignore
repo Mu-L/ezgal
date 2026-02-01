@@ -24,6 +24,11 @@ ezgal/.mono/
 ezgal/data_*/
 ezgal/mono_crash.*.json
 
+# krita ignores
+*.png~
+*.jpg~
+*.ion~
+
 # note file ignores
 .obsidian/
 vx_notebook/

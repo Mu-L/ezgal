@@ -21,14 +21,16 @@ public partial class MainControl : CanvasLayer
 
 	public override void _Ready()
 	{
+		SetJson();
 		_gameStartNode.Pressed += OnGameStartPressed;
 		_technicalNode.Pressed += OnTechnicalPressed;
 		_exitNode.Pressed += OnExitPressed;
+
 	}
 
 	private void SetJson()
 	{
-		Color themeColor = ToolsInit.FindInitColor("main", "theme", "color");
+		Color themeColor = ToolsInit.FindInitColor("main", "theme", "color", Menu.Color);
 		Menu.Color = themeColor;
 		_start.AddThemeColorOverride("font_color", themeColor);
 	}

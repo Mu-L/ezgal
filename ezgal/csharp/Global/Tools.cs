@@ -149,91 +149,50 @@ public partial class Tools : Node
 
 public partial class ToolsInit : Node
 {
-	public static T FindInitValue<T>(string scene, string node, string key)
+	public static T FindInitValue<T>(string scene, string node, string key, T defaultValue)
 	{
 		string jsonString = FlowData.jsonString;
 		if (!FlowData.IsBuild)
 		{
-			jsonString = System.IO.File.ReadAllText("./script/.init.json");
+			string filePath = "./script/.init.json";
+			if (!System.IO.File.Exists(filePath))
+			{
+				return defaultValue;
+			}
+			jsonString = System.IO.File.ReadAllText(filePath);
 		}
 		using JsonDocument doc = JsonDocument.Parse(jsonString);
 		JsonElement rootElement = doc.RootElement;
 		if (!rootElement.TryGetProperty(scene, out JsonElement sceneElement))
-			return default;
+			return defaultValue;
 		if (!sceneElement.TryGetProperty(node, out JsonElement nodeElement))
-			return default;
+			return defaultValue;
 		if (!nodeElement.TryGetProperty(key, out JsonElement keyElement))
-			return default;
+			return defaultValue;
 		return keyElement.Deserialize<T>();
 	}
 
-	public static string FindInitString(string scene, string node, string key)
+	public static Color FindInitColor(string scene, string node, string key, Color defaultColor)
 	{
-		string jsonString = FlowData.jsonString;
-		if (!FlowData.IsBuild)
+		string keyElement = FindInitValue<string>(scene, node, key, null);
+		try
 		{
-			jsonString = System.IO.File.ReadAllText("./script/.init.json");
+			Color result = StringToColor(keyElement);
+			return result;
 		}
-		using JsonDocument doc = JsonDocument.Parse(jsonString);
-		JsonElement rootElement = doc.RootElement;
-		if (!rootElement.TryGetProperty(scene, out JsonElement sceneElement))
-			return "";
-		if (!sceneElement.TryGetProperty(node, out JsonElement nodeElement))
-			return "";
-		if (!nodeElement.TryGetProperty(key, out JsonElement keyElement))
-			return "";
-		return keyElement.GetString();
+		catch
+		{
+			return defaultColor;
+		}
 	}
 
-	public static int FindInitInt(string scene, string node, string key)
-	{
-		string jsonString = FlowData.jsonString;
-		if (!FlowData.IsBuild)
-		{
-			jsonString = System.IO.File.ReadAllText("./script/.init.json");
-		}
-		using JsonDocument doc = JsonDocument.Parse(jsonString);
-		JsonElement rootElement = doc.RootElement;
-		if (!rootElement.TryGetProperty(scene, out JsonElement sceneElement))
-			return 0;
-		if (!sceneElement.TryGetProperty(node, out JsonElement nodeElement))
-			return 0;
-		if (!nodeElement.TryGetProperty(key, out JsonElement keyElement))
-			return 0;
-		return keyElement.GetInt32();
-	}
-
-	public static float FindInitFloat(string scene, string node, string key)
-	{
-		string jsonString = FlowData.jsonString;
-		if (!FlowData.IsBuild)
-		{
-			jsonString = System.IO.File.ReadAllText("./script/.init.json");
-		}
-		using JsonDocument doc = JsonDocument.Parse(jsonString);
-		JsonElement rootElement = doc.RootElement;
-		if (!rootElement.TryGetProperty(scene, out JsonElement sceneElement))
-			return 0.0f;
-		if (!sceneElement.TryGetProperty(node, out JsonElement nodeElement))
-			return 0.0f;
-		if (!nodeElement.TryGetProperty(key, out JsonElement keyElement))
-			return 0.0f;
-		return keyElement.GetSingle();
-	}
-
-	public static Color FindInitColor(string scene, string node, string key)
-	{
-		string keyElement = FindInitString(scene, node, key);
-		return StringToColor(keyElement);
-	}
 	private static Color StringToColor(string rgbaString)
 	{
 		Regex regex = new Regex(@"rgba\(([^,]+),\s*([^,]+),\s*([^,]+),\s*([^)]+)\)");
 		Match match = regex.Match(rgbaString);
 		if (!match.Success)
 		{
-			GD.PrintErr("Invalid rgba string format");
-			return Colors.White; // 默认返回白色
+			throw new ArgumentException("Invalid rgba string format");
 		}
 		float r = float.Parse(match.Groups[1].Value.Trim());
 		float g = float.Parse(match.Groups[2].Value.Trim());
