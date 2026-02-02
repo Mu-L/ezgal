@@ -2,7 +2,7 @@
 
 Ezgal是基于Godot Mono的文字冒险类游戏的开发模板.
 
-![](../public/example.png)
+![Example](../public/example.png)
 
 ## 目录
 
