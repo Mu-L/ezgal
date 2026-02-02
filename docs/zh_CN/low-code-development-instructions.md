@@ -19,7 +19,7 @@ Ezgal支持windows与linux端，mac端可以自行通过godot导出开发模板�
 
 ### 使用
 
-开放接口以文件夹形式进行管理，可参考[框架结构](/file-structure-description#框架结构/)的**低代码开发**说明创建对应文件夹，剧本演出脚本可参考[语法设计](/syntax-design)进行编写.
+开放接口以文件夹形式进行管理，可参考[框架结构](/zh_CN/file-structure-description#框架结构/)的**低代码开发**说明创建对应文件夹，剧本演出脚本可参考[语法设计](/zh_CN/syntax-design)进行编写.
 
 ### 低代码开发编辑器
 

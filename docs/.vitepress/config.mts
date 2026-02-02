@@ -1,32 +1,30 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-
+  title: 'EZGAL',
+  description: '基于Godot Mono的GalGame框架',
+  base: '/oss/ezgal/',
   lastUpdated: true,
-
-  title: "EZGAL",
-  base: "/oss/ezgal/",
-  description: "A framework based on godot mono designed to facilitate galgame development.",
+  
   head: [
-    [
-      'link',
-      { rel: 'icon', href: 'https://godothub.com/oss/ezgal/icon.png' }
-    ]
+    ['link', { rel: 'icon', href: 'https://godothub.com/oss/ezgal/icon.png' }]
   ],
+
   themeConfig: {
     outline: [2, 3],
     logo: '/icon.png',
+    
     search: {
       provider: 'local'
     },
+    
     socialLinks: [
-      {
-        icon: 'github', link: 'https://github.com/godothub/ezgal'
-      },
-      {
-        icon: {
+      { icon: 'github', link: 'https://github.com/godothub/ezgal' },
+      { 
+        icon: { 
           svg: '<svg t="1752549772860" class="icon" viewBox="0 0 1056 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2154" width="200" height="200"><path d="M479.663158 988.429474c-90.004211-10.24-187.553684-48.505263-247.376842-96.471579-33.953684-26.947368-90.004211-88.387368-111.023158-120.724211-64.134737-99.166316-90.004211-222.046316-70.602105-333.608421 18.863158-107.250526 63.056842-191.326316 141.20421-267.856842 135.814737-133.12 353.010526-175.157895 527.090526-101.861053 57.128421 24.252632 112.101053 58.206316 134.736843 82.997895 44.193684 49.044211 28.025263 128.808421-31.258948 158.450526-25.330526 12.395789-72.218947 12.934737-90.543158 1.077895s-35.031579-44.193684-39.343158-77.069473c-2.155789-15.629474-4.850526-28.564211-5.389473-28.564211-1.077895 0-14.551579 7.545263-29.642106 16.168421-49.583158 29.103158-64.134737 33.414737-140.126315 38.265263-39.882105 2.155789-84.075789 5.928421-97.549474 8.084211-24.791579 3.233684-54.972632-1.077895-102.938947-16.168421l-25.330527-8.084211 1.077895 52.277895c0.538947 50.661053 0 53.355789-21.557895 98.088421-28.025263 58.206316-38.265263 93.237895-42.576842 144.976842-10.24 124.496842 57.667368 217.195789 186.47579 253.844211 83.536842 23.713684 221.507368 18.863158 296.421052-10.778948 71.68-28.564211 134.736842-94.854737 134.736842-142.282105 0-19.402105-24.791579-44.193684-51.738947-50.661053-11.317895-3.233684-54.433684-7.006316-95.393684-8.623158-86.770526-3.772632-147.132632-11.856842-163.84-22.635789s-25.330526-40.96-17.785263-63.59579c7.545263-23.713684 19.402105-33.953684 54.433684-46.888421 23.713684-9.162105 40.96-10.778947 109.945263-10.778947 146.593684 0 215.578947 18.324211 269.473684 72.218947 61.978947 62.517895 68.446316 157.372632 16.168421 241.448421-77.069474 123.418947-168.151579 194.021053-291.570526 225.818948-41.498947 11.317895-151.444211 18.324211-196.176842 12.934737z" fill="#D62240" p-id="2155"></path></svg>'
-        }, link: 'https://gitcode.com/godothub/ezgal'
+        }, 
+        link: 'https://gitcode.com/godothub/ezgal'
       },
       {
         icon: {
@@ -39,7 +37,6 @@ export default defineConfig({
   },
 
   locales: {
-
     root: {
       label: '简体中文',
       lang: 'zh-CN',
@@ -76,22 +73,34 @@ export default defineConfig({
           }
         },
         nav: [
-          {
-            text: '主页', link: '/'
-          },
-          {
-            text: 'Godot Hub', link: 'https://godothub.com'
-          }
+          { text: '首页', link: '/zh_CN/' },
+          { text: 'Godot Hub', link: 'https://godothub.com' }
         ],
         sidebar: [
-          { text: '定义', link: '/definition' },
-          { text: '低代码开发说明', link: '/low-code-development-instructions' },
-          { text: '文件结构说明', link: '/file-structure-description' },
-          { text: '语法设计', link: '/syntax-design' },
-          { text: '代码编写规范', link: '/code-writing-specifications' },
-          { text: '解释原理说明', link: '/explanation-principle-description' },
-          // { text: 'Interpreter Description', link: '/interpreter-description' },
-          { text: '参与贡献', link: '/contributing' }
+          {
+            text: '开始',
+            items: [
+              { text: 'EZGAL', link: '/zh_CN/' },
+              { text: '定义', link: '/zh_CN/definition' },
+              { text: '低代码开发说明', link: '/zh_CN/low-code-development-instructions' },
+              { text: '文件结构说明', link: '/zh_CN/file-structure-description' }
+            ]
+          },
+          {
+            text: 'EZLANG',
+            items: [
+              { text: '语法设计', link: '/zh_CN/syntax-design' },
+              { text: '代码编写规范', link: '/zh_CN/code-writing-specifications' },
+              { text: '解释原理说明', link: '/zh_CN/explanation-principle-description' }
+            ]
+          },
+          {
+            text: '开发',
+            items: [
+              { text: '参与贡献', link: '/zh_CN/contributing' },
+              { text: '工具集', link: '/zh_CN/tools' }
+            ]
+          }
         ]
       }
     },
@@ -99,7 +108,7 @@ export default defineConfig({
     en: {
       label: 'English',
       lang: 'en',
-      description: 'A framework based on godot mono designed to facilitate galgame development.',
+      description: 'A framework based on Godot Mono designed to facilitate galgame development.',
       themeConfig: {
         lastUpdatedText: 'Last updated on',
         editLink: {
@@ -107,22 +116,34 @@ export default defineConfig({
           text: 'Edit this page online'
         },
         nav: [
-          {
-            text: 'Home', link: '/'
-          },
-          {
-            text: 'Godot Hub', link: 'https://godothub.com'
-          }
+          { text: 'Home', link: '/en_EN/' },
+          { text: 'Godot Hub', link: 'https://godothub.com' }
         ],
         sidebar: [
-          { text: 'Definition', link: '/definition' },
-          { text: 'Low-Code Development Instructions', link: '/en/low-code-development-instructions' },
-          { text: 'File Structure Description', link: '/en/file-structure-description' },
-          { text: 'Syntax Design', link: '/en/syntax-design' },
-          { text: 'Code Writing Specifications', link: '/en/code-writing-specifications' },
-          { text: 'Explanation Principle Description', link: '/en/explanation-principle-description' },
-          // { text: 'Interpreter Description', link: '/en/interpreter-description' },
-          { text: 'Contributing', link: '/en/contributing' }
+          {
+            text: 'Getting Started',
+            items: [
+              { text: 'EZGAL', link: '/en_EN/' },
+              { text: 'Definition', link: '/en_EN/definition' },
+              { text: 'Low-Code Development', link: '/en_EN/low-code-development-instructions' },
+              { text: 'File Structure', link: '/en_EN/file-structure-description' }
+            ]
+          },
+          {
+            text: 'EZLANG',
+            items: [
+              { text: 'Syntax Design', link: '/en_EN/syntax-design' },
+              { text: 'Code Standards', link: '/en_EN/code-writing-specifications' },
+              { text: 'Interpreter', link: '/en_EN/explanation-principle-description' }
+            ]
+          },
+          {
+            text: 'Development',
+            items: [
+              { text: 'Contributing', link: '/en_EN/contributing' },
+              { text: 'Tools', link: '/en_EN/tools' }
+            ]
+          }
         ]
       }
     }

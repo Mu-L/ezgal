@@ -137,3 +137,8 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/* 针对首页隐藏语言切换器 */
+.VPNavBar:has(.VPNavBarHome) .VPLocalization {
+  display: none !important;
+}
+
