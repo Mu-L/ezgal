@@ -7,12 +7,12 @@ export default defineConfig({
   lastUpdated: true,
   
   head: [
-    ['link', { rel: 'icon', href: 'https://godothub.com/oss/ezgal/icon.png' }]
+    ['link', { rel: 'icon', href: '/oss/ezgal/icon.svg' }]
   ],
 
   themeConfig: {
     outline: [2, 3],
-    logo: '/icon.png',
+    logo: '/icon.svg',
     
     search: {
       provider: 'local'

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://32uue0wty7mw"
-path="res://.godot/imported/Godot_and_Hub.png-a8576c84c910e56ac9c3ca6027a18940.ctex"
+uid="uid://cfiy3de6bdhul"
+path="res://.godot/imported/ezgal.png-f531358b03bc181e54ed4aa8c4aa55cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/Godot_and_Hub.png"
-dest_files=["res://.godot/imported/Godot_and_Hub.png-a8576c84c910e56ac9c3ca6027a18940.ctex"]
+source_file="res://image/ezgal.png"
+dest_files=["res://.godot/imported/ezgal.png-f531358b03bc181e54ed4aa8c4aa55cf.ctex"]
 
 [params]
 

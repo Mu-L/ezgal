@@ -11,7 +11,7 @@ public partial class End : Control
 	public override void _Ready()
 	{
 		Tools.SetTexture(_endTextureNode, "end_texture");
-          	SetJson();
+		  	SetJson();
 	}
 
 	private void SetJson()

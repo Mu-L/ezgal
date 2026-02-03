@@ -17,7 +17,7 @@ config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/fullsize=false
 boot_splash/image="uid://32uue0wty7mw"
-config/icon="res://image/icon.png"
+config/icon="uid://j4t0kg0bejd4"
 
 [autoload]
 
