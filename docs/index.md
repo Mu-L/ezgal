@@ -5,7 +5,7 @@ hero:
   text: 基于Godot Mono的文字冒险类游戏开发模板
   tagline: Godot Mono-Based Text Adventure Game Development Template.
   image:
-    src: /public/icon.png
+    src: /icon.png
     alt: Ezgal v1
   actions:
     - theme: brand
