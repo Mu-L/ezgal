@@ -1,6 +1,7 @@
 <div align="center" style="display:grid;place-items:center;">
 	<p>
-	    <a href="https://atomgit.com/godothub/ezgal" target="_blank"><img width="180" src="./ezgal/image/icon.png" alt="ezgal logo"></a>
+	    <a href="https://github.com/GodotHub/ezgal" target="_blank"><img width="180" src="./docs/public/icon.svg" alt="ezgal logo"></a>
+	    <a href="https://github.com/GodotHub/ezgal" target="_blank"><img width="180" src="./docs/public/icon.png" alt="ezgal logo"></a>
         <h1>ezgal</h1>
     <p>
     <img src="https://img.shields.io/badge/License-MIT--License-blue.svg?style=flat-square&logo=opensourceinitiative&logoSize=14" alt="License" height="20">
@@ -39,14 +40,7 @@ We have compiled documentation to facilitate understanding of the project and it
 You can directly clone the source code into your project and import the **ezgal** folder into Godot for further development:
 
 ```bash
-git clone https://atomgit.com/godothub/ezgal.git
-cd ezgal/ezgal
-```
-
-or
-
-```bash
-git clone https://gitee.com/godothub/ezgal.git
+git clone https://github.com/GodotHub/ezgal.git
 cd ezgal/ezgal
 ```
 

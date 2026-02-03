@@ -1,7 +1,7 @@
 <div align="center" style="display:grid;place-items:center;">
 	<p>
-	    <a href="https://gitee.com/cryingn/ezgal" target="_blank"><img width="180" src="./docs/public/icon.svg" alt="ezgal logo"></a>
-	    <a href="https://gitee.com/cryingn/ezgal" target="_blank"><img width="180" src="./docs/public/icon.png" alt="ezgal logo"></a>
+	    <a href="https://atomgit.com/cryingn/ezgal" target="_blank"><img width="180" src="./docs/public/icon.svg" alt="ezgal logo"></a>
+	    <a href="https://atomgit.com/cryingn/ezgal" target="_blank"><img width="180" src="./docs/public/icon.png" alt="ezgal logo"></a>
         <h1>ezgal</h1>
     <p>
     <img src="https://img.shields.io/badge/License-MIT--License-blue.svg?style=flat-square&logo=opensourceinitiative&logoSize=14" alt="License" height="20">
