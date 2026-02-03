@@ -4,6 +4,7 @@ make/obj
 make/Make.exe
 make/Make
 make/make.sln
+ezgal/image/icon.svg
 bin/
 
 # Godot 4+ specific ignores
@@ -45,7 +46,14 @@ ezgal/.vscode/
 ezgal/libaries/
 docs/private/server/Qwen2.5-1.5B-Instruct/
 
+# VitePress ignore rules
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+docs/package-lock.json
+
 # API-KEY
 docs/private/apikey
 docs/private/apiurl
+
+
 
