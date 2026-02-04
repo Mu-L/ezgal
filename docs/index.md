@@ -2,8 +2,8 @@
 layout: home
 hero:
   name: Ezgal
-  text: 基于Godot Mono的文字冒险类游戏开发模板
-  tagline: Godot Mono-Based Text Adventure Game Development Template.
+  text: 文字冒险类游戏模板
+  tagline: 基于Godot Mono的文字冒险类游戏开发模板
   image:
     src: /icon.svg
     alt: Ezgal v1
