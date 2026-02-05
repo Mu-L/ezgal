@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+
   title: 'EZGAL',
   description: '基于Godot Mono的GalGame框架',
   base: '/oss/ezgal/',
@@ -105,9 +106,9 @@ export default defineConfig({
       }
     },
 
-    en: {
+    en_EN: {
       label: 'English',
-      lang: 'en',
+      lang: 'en_EN',
       description: 'A framework based on Godot Mono designed to facilitate galgame development.',
       themeConfig: {
         lastUpdatedText: 'Last updated on',
