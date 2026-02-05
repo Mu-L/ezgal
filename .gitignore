@@ -54,6 +54,7 @@ docs/package-lock.json
 # API-KEY
 docs/private/apikey
 docs/private/apiurl
-
+docs/private/__pycache__/
+docs/private/
 
 
